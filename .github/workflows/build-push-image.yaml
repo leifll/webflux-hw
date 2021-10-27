@@ -51,5 +51,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: main-${{steps.one.outputs.substring}}
+          tags: main-${{steps.tagname.outputs.substring}}
           labels: ${{ steps.meta.outputs.labels }}
