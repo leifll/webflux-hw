@@ -41,7 +41,7 @@ jobs:
 
       - name: Create tag from commit sha 
         id: tagname
-        uses: bhowell2/github-substring-action
+        uses: bhowell2/github-substring-action@v1.0.0
         with:
           value: ${{github.sha}}
           length_from_start: 7
