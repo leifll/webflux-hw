@@ -39,10 +39,17 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Create tag from commit sha 
+        id: tagname
+        uses: bhowell2/github-substring-action
+        with:
+          value: ${{github.sha}}
+          length_from_start: 7
+
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
           push: true
-          tags: main-${{github.sha}}
+          tags: main-${{steps.one.outputs.substring}}
           labels: ${{ steps.meta.outputs.labels }}
