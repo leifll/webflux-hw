@@ -47,12 +47,11 @@ jobs:
           start: 0
           length: 7
 
-      - run: echo ${{steps.tagname.outputs.result}}
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: main-${{steps.tagname.outputs.result}}
+          #tags: main-${{steps.tagname.outputs.result}}
+          tags: main
           labels: ${{ steps.meta.outputs.labels }}
