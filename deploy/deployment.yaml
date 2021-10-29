@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webflux-hw-deployment
+  namespace: apps
   labels:
     app: webflux-hw-deployment
 spec:
@@ -25,6 +26,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: webflux-hw-service
+  namespace: apps
 spec:
   selector:
     app: webflux-hw-pod
