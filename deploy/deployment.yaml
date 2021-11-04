@@ -53,4 +53,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: webflux-hw-service.apps
+        host: webflux-hw-service.apps.svc.cluster.local
