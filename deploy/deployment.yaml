@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: webflux-hw-container
-        image: ghcr.io/leifll/webflux-hw:main-a1ccb12
+        image: ghcr.io/leifll/webflux-hw:main-5658942
         ports:
         - containerPort: 8080
 ---
