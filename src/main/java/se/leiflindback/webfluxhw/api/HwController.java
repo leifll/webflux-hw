@@ -13,7 +13,7 @@ public class HwController {
     /**
      * @return A greeting.
      */
-    @GetMapping("/")
+    @GetMapping("/webflux-hw")
     public Mono<String> greeting() {
         return Mono.just("Welcome to the WebFlux API");
     }
