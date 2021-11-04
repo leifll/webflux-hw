@@ -31,7 +31,8 @@ spec:
   selector:
     app: webflux-hw-pod
   ports:
-    - port: 80
+    - name: http-webflux-hw-port
+      port: 80
       targetPort: 8080
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -52,4 +53,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: webflux-hw-service
+        host: webflux-hw-service.apps.svc.cluster.local
