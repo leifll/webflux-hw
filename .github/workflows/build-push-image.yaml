@@ -3,7 +3,8 @@ name: Create and publish a Docker image
 on:
   push:
     branches: [main]
-
+    paths-ignore:
+      - 'deploy/**' # This is watched by the flux kustomization.
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -34,7 +35,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set current date as env variable
-        run: echo "NOW::$(date +'%Y%m%d%H%M%S%N')" >> $GITHUB_ENV
+        run: echo "NOW=$(date +'%Y%m%d%H%M%S%N')" >> $GITHUB_ENV
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
