@@ -55,5 +55,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}-${{steps.tagshapart.outputs.result}}-${{NOW}}
+          tags: ${{ steps.meta.outputs.tags }}-${{steps.tagshapart.outputs.result}}-${{env.NOW}}
           labels: ${{ steps.meta.outputs.labels }}
