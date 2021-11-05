@@ -33,6 +33,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set current date as env variable
+        run: echo "NOW::$(date +'%Y%m%d%H%M%S%N')" >> $GITHUB_ENV
+
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
@@ -52,5 +55,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}-${{steps.tagshapart.outputs.result}}
+          tags: ${{ steps.meta.outputs.tags }}-${{steps.tagshapart.outputs.result}}-${{NOW}}
           labels: ${{ steps.meta.outputs.labels }}
