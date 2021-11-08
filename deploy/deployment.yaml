@@ -17,10 +17,10 @@ spec:
         app: webflux-hw-pod
     spec:
       containers:
-      - name: webflux-hw-container
-        image: ghcr.io/leifll/webflux-hw:main-5658942
-        ports:
-        - containerPort: 8080
+        - name: webflux-hw-container
+          image: ghcr.io/leifll/webflux-hw:main-5658942 # {"$imagepolicy": "apps:webflux-hw-imagepolicy"}
+          ports:
+            - containerPort: 8080
 ---
 kind: Service
 apiVersion: v1
@@ -42,15 +42,15 @@ metadata:
   namespace: apps
 spec:
   hosts:
-  - "webflux-hw.leiflindback.se"
+    - 'webflux-hw.leiflindback.se'
   gateways:
-  - istio-system/public-gateway
+    - istio-system/public-gateway
   http:
-  - match:
-    - uri:
-        prefix: /webflux-hw
-    route:
-    - destination:
-        port:
-          number: 80
-        host: webflux-hw-service.apps.svc.cluster.local
+    - match:
+        - uri:
+            prefix: /webflux-hw
+      route:
+        - destination:
+            port:
+              number: 80
+            host: webflux-hw-service.apps.svc.cluster.local
