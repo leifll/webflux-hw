@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webflux-hw-container
-          image: ghcr.io/leifll/webflux-hw:main-5658942 # {"$imagepolicy": "apps:webflux-hw-imagepolicy"}
+          image: ghcr.io/leifll/webflux-hw:main-34e9cae-20211105140542920587058 # {"$imagepolicy": "apps:webflux-hw-imagepolicy"}
           ports:
             - containerPort: 8080
 ---
