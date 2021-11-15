@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webflux-hw-container
-          image: ghcr.io/leifll/webflux-hw:main-3a1ff17-20211108122818144752276 # {"$imagepolicy": "apps:webflux-hw-imagepolicy"}
+          image: ghcr.io/leifll/webflux-hw:main-3c281c7-20211115141631003014801 # {"$imagepolicy": "apps:webflux-hw-imagepolicy"}
           ports:
             - containerPort: 8080
 # ---
