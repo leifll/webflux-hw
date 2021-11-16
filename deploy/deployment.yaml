@@ -108,6 +108,6 @@ spec:
         interval: 1m
     webhooks:
       - name: load-test
-        url: http://flagger-loadtester.test/
+        url: http://flagger-loadtester.flagger-test/
         metadata:
           cmd: "hey -z 10s -q 10 -c 2 http://webflux-hw-service-canary.apps:80/"
