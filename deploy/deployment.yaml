@@ -42,7 +42,7 @@ spec:
   maxReplicas: 4
   metrics:
   - type: Resource
-  resource:
+    resource:
       name: cpu
       target:
         type: AverageValue
