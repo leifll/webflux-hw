@@ -89,10 +89,10 @@ metadata:
   name: webflux-hw-canary
   namespace: apps
 spec:
-  # targetRef: Use when referring to deployment instead of hpa.  
-  # apiVersion: apps/v1
-  # kind: Deployment
-  # name: webflux-hw-deployment
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: webflux-hw-deployment
   autoscalerRef:
     apiVersion: autoscaling/v2beta2
     kind: HorizontalPodAutoscaler
